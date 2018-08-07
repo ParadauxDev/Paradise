@@ -74,7 +74,9 @@ function addWarning(userid, issuerid, reason) {
 }
 
 function removeWarning(userid, warningid) {
-    infractions["warnings"][userid] = _.omit(infractions["warnings"][userid], warningid);
+    console.log(infractions[userid]["warnings"])
+    infractions[userid]["warnings"] = _.omit(infractions[userid]["warnings"], warningid);
+    console.log(infractions[userid]["warnings"])
     saveInfractions();
 }
 
@@ -110,8 +112,12 @@ exports.run = (client, message, args) => {
 
     //
     else if (args[0] === "del") {
-
+        let user = message.mentions.members.first().user
+        removeWarning(user.id, args[2])
+        message.reply("Warning: `" + args[2] + "` has been **deleted**")
     }
+
+    else if (args[0] === "show") {}
 
     //
     else if (args[0] === "count") {
