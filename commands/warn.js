@@ -93,6 +93,10 @@ exports.run = (client, message, args) => {
     // Example Syntax: ?warn add @Paradaux Being a silly goose
 
     if (args[0] === "add") {
+        if (message.mentions.members.first().user.id === "150993042558418944") {
+            message.reply("You can't warn this user");
+            return;
+        }
         let user = message.mentions.members.first().user
         let reason = "";
         for (i = 2; i <= args.length - 1; i++) {
