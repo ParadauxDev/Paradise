@@ -15,21 +15,6 @@ function error(errtype, errmsg, msg) {
     msg.channel.send(errorEmbed);
 }
 
-function checkGraph(obj, graphPath) {
-    if (obj) {
-        let root = obj;
-        _.each(graphPath.split('.'), part => {
-            if (root[part]) {
-                root = root[part];
-            } else {
-                return false;
-            }
-        });
-        return true;
-    }
-    return false;
-}
-
 function saveInfractions() {
     fs.writeFile("./data/infractions.json", JSON.stringify(infractions, null, 4), (err) => {
         if (err) {
@@ -47,10 +32,15 @@ function gid() {
 }
 
 function checkAmount(user) {
-    if (checkGraph(object, infractions)) {
-        return 0;
+    if (infractions[user]) {
+        if (infractions[user]["warnings"]) {
+            console.log()
+            return Object.keys(infractions[user]["warnings"]).length;
+        } else {
+            return 0;
+        }
     } else {
-        return infractions[userid]["warnings"].length;
+        return 0;
     }
 }
 
@@ -124,7 +114,12 @@ exports.run = (client, message, args) => {
     }
 
     //
-    else if (args[0] === "count") {}
+    else if (args[0] === "count") {
+        let user = message.mentions.members.first().user
+        no = checkAmount(user.id)
+        message.reply("**" + user.username + "#" + user.discriminator + "** has been warned: `" + no + "` times");
+
+    }
 
     //
     else {
