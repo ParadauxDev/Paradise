@@ -1,0 +1,16 @@
+{
+  "name": "vishnu",
+  "version": "1.0.0",
+  "description": "A bot made for the Discord server, Inspire only.",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rahul",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2"
+  }
+}
