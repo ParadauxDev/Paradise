@@ -1,11 +1,10 @@
 const Discord = require('discord.js');
-const config = require('../config.json');
+const config = require('../data/config.json');
 const fs = require('fs');
 const _ = require('lodash');
 const moment = require('moment')
-let infractions = require('../data/infractions.json');
-let red = config.red;
-let green = config.green;
+
+let warnings = require('../data/infractions/warnings.json');
 
 function error(errtype, errmsg, msg) {
     errorEmbed = new Discord.RichEmbed()
@@ -15,8 +14,8 @@ function error(errtype, errmsg, msg) {
     msg.channel.send(errorEmbed);
 }
 
-function saveInfractions() {
-    fs.writeFile("./data/infractions.json", JSON.stringify(infractions, null, 4), (err) => {
+function saveWarnings() {
+    fs.writeFile("./data/infractions/warnings.json", JSON.stringify(infractions, null, 4), (err) => {
         if (err) {
             console.error(err);
             return;
@@ -32,16 +31,14 @@ function gid() {
 }
 
 function checkAmount(user) {
-    if (infractions[user]) {
-        if (infractions[user]["warnings"]) {
-            console.log()
-            return Object.keys(infractions[user]["warnings"]).length;
-        } else {
-            return 0;
+    amount = 0
+    for (i = warnings.length; i <= 0; i--) {
+        j = Object.values(warnings)
+        if (j[0] == user) {
+            amount++;
         }
-    } else {
-        return 0;
-    }
+    } 
+    return amount
 }
 
 function addWarning(userid, issuerid, reason) {

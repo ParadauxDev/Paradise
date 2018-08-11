@@ -2,7 +2,7 @@
   "name": "vishnu",
   "version": "1.0.0",
   "description": "A bot made for the Discord server, Inspire only.",
-  "main": "client.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.3.2",
+    "enmap": "^3.0.4",
     "lodash": "^4.17.10",
     "moment": "^2.22.2"
   }
