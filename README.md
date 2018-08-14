@@ -1,6 +1,6 @@
 #Paradise: Yet another discord.js bot
 Paradise is a utility, fun and moderation bot written for Discord using [discord.js](https://github.com/discordjs/discord.js)
-
+Open Source, not to be used for commercial activity.
 
 # Requirements
 
