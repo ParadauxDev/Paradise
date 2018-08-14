@@ -14,10 +14,15 @@ In order to host this bot yourself you'll need the following node.js packages wh
 # Installtion / Setting it up
 
 Before you can begin using this bot you will need to register your bot with the discord api via the developers portal available [here](https://discordapp.com/developers/applications/me) 
+
 Following on from that you'll need to invite your bot by creating an invite link using this format `https://discordapp.com/oauth2/authorize?client_id=INSERT_CLIENT_ID_HERE&scope=bot&permissions=2146958839` and inserting the client id you got from discord within that link. 
+
 Inside of the developers portal you will also need to make sure you create a bot user account, you do this by clicking into the application you've made and going into the bot tab. 
+
 Now clone the repository and place the token you get on that page into /data/config.json.example in the token field then rename config.json.example to simply config.json 
+
 Now you need to grab the dependancies using `npm install` inside of the main directory of the bot
+
 Now you've set it all up and just need to start the bot by using `node start main.js`
 
 Developed using the following global packages
