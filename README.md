@@ -10,6 +10,9 @@ In order to host this bot yourself you'll need the following node.js packages wh
  -  [enmap](https://github.com/eslachance/enmap) - v3.0.4
  - [lodash](https://github.com/lodash/lodash) - v4.17.10
  - [moment](https://github.com/moment/moment/) - v2.22.2
+ 
+ Developed using the following global packages
+- [nodemon](https://github.com/remy/nodemon) - v1.18.3
 
 # Installtion / Setting it up
 
@@ -24,9 +27,6 @@ Now clone the repository and place the token you get on that page into /data/con
 Now you need to grab the dependancies using `npm install` inside of the main directory of the bot
 
 Now you've set it all up and just need to start the bot by using `node start main.js`
-
-Developed using the following global packages
-- [nodemon](https://github.com/remy/nodemon) - v1.18.3
 
 ## Contributors 
 
