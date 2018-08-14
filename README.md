@@ -1,5 +1,5 @@
-# Yamato: Yet another discord.js bot
-Yamato is a utility, fun and moderation bot written for Discord using [discord.js](https://github.com/discordjs/discord.js)
+#Paradise: Yet another discord.js bot
+Paradise is a utility, fun and moderation bot written for Discord using [discord.js](https://github.com/discordjs/discord.js)
 
 
 # Requirements
@@ -33,11 +33,15 @@ Now you've set it all up and just need to start the bot by using `node start mai
 Here's a list of our current, active contributors:
 
 - [ParadauxDev](https://github.com/ParadauxDevelopment) 
-- [Rahul0027](https://github.com/Rahul0027)
+
 
 ## Planned Features
 
-Coming Soon
+| user        | feature                     | eta  |
+|-------------|-----------------------------|------|
+| ParadauxDev | basic moderation system     | v1.0 |
+| ParadauxDev | basic administration system | v1.0 |
+| ParadauxDev | fun commands                | v1.0 |
 
 ## Command List
 
