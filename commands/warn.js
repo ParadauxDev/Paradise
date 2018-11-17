@@ -23,66 +23,33 @@ function saveWarnings() {
     });
 }
 
-function gid() {
-    function g4dID() {
-        return Math.floor(1000 + Math.random() * 9000);
-    }
-    return g4dID() + "-" + g4dID() + "-" + g4dID() + "-" + g4dID();
-}
-
 function checkAmount(user) {
     amount = 0
-    for (i = warnings.length; i <= 0; i--) {
-        j = Object.values(warnings)
-        if (j[0] == user) {
-            amount++;
-        }
-    } 
-    return amount
-}
-
-function addWarning(userid, issuerid, reason) {
-    let warningid = gid()
-    if (infractions[userid]) {
-        infractions[userid]["warnings"][warningid] = {
-            time: moment(),
-            reason,
-            issuerid
-        }
-    } else {
-        infractions[userid] = {
-            "warnings": {}
-        }
-
-        infractions[userid]["warnings"][warningid] = {
-
-        }
-
-        infractions[userid]["warnings"][warningid] = {
-            time: moment(),
-            reason,
-            issuerid
-        }
+    if (warnings["users"][user] !== undefined) {
+        return warnings["users"][user].length
     }
-
-
-
-    saveInfractions();
 }
 
-function removeWarning(userid, warningid) {
-    console.log(infractions[userid]["warnings"])
-    infractions[userid]["warnings"] = _.omit(infractions[userid]["warnings"], warningid);
-    console.log(infractions[userid]["warnings"])
+function addWarning(userid, reason) {
+    newWarning = {
+        reason,
+        "time": moment()
+    }
+    if (warnings["users"][userid] !== undefined) {
+        warnings["users"][userid].push(newWarning);
+    } else {
+        warnings["users"][userid] = [];
+        warnings["users"][userid].push(newWarning);
+    }
     saveInfractions();
 }
 
 exports.run = (client, message, args) => {
     // Adds a warning to a user
-    // Example Syntax: ?warn add @Paradaux Being a silly goose
+    // Example Syntax: ;warn add @Paradaux Being a silly goose
 
     if (args[0] === "add") {
-        if (message.mentions.members.first().user.id === "150993042558418944") {
+        if (message.mentions.members.first().user.id === "") {
             message.reply("You can't warn this user");
             return;
         }
@@ -92,7 +59,7 @@ exports.run = (client, message, args) => {
             reason = reason + " " + (args[i]);
         }
         let warnedPMEmbed = new Discord.RichEmbed()
-            .setColor(red)
+            .setColor(0x4793FF)
             .setAuthor("You have received a warning!", "https://cdn.discordapp.com/attachments/465522565130223626/469665205870133248/unknown.png")
             .setDescription("This has been archived against your user, please contact an administrator if you feel like this has been a mistake.\n You were warned by: `" + message.author.username + "` for: `" + reason + "`")
             .setTimestamp();
@@ -104,24 +71,23 @@ exports.run = (client, message, args) => {
 
         user.send(warnedPMEmbed);
         message.channel.send(warnedPublicEmbed);
-        addWarning(user.id, message.author.id, reason);
+        addWarning(user.id, reason);
     }
 
     //
     else if (args[0] === "del") {
-        let user = message.mentions.members.first().user
-        removeWarning(user.id, args[2])
-        message.reply("Warning: `" + args[2] + "` has been **deleted**")
-    }
-
-    else if (args[0] === "show") {}
+        message.reply("Please Contact **Paradaux#2864** Regarding the removal of warnings for now.")
+    } else if (args[0] === "show") {}
 
     //
     else if (args[0] === "count") {
         let user = message.mentions.members.first().user
         no = checkAmount(user.id)
-        message.reply("**" + user.username + "#" + user.discriminator + "** has been warned: `" + no + "` times");
-
+        if (no > 0) {
+            message.reply("**" + user.username + "#" + user.discriminator + "** has been warned: `" + no + "` time(s)");
+        } else {
+            message.reply("**" + user.username + "#" + user.discriminator + "** hasn't been warned, thankfully.")
+        }
     }
 
     //

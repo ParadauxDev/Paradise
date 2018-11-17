@@ -1,8 +1,4 @@
 {
-	"1111-1111-1111-1111": {
-		"user": "Paradaux",
-		"issuer": "Rahul",
-		"time": "d/t obj",
-		"reason": "For a very reasonable reason."
+	"users": {
 	}
 }
