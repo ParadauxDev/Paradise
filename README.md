@@ -13,6 +13,7 @@ In order to host this bot yourself you'll need the following node.js packages wh
  
  Developed using the following global packages
 - [nodemon](https://github.com/remy/nodemon) - v1.18.3
+- [forever](https://github.com/foreverjs/forever) - v0.15.3
 
 # Installtion / Setting it up
 
@@ -45,7 +46,10 @@ Here's a list of our current, active contributors:
 
 ## Command List
 
-Coming soon.
+Commands are currently being worked on, but currently the focus is on the back-end handling for each command. (i.e database storage for our moderation system.)
 
-
+| Command | Argument(s)   | Notes                                     | Example Usage |
+|---------|---------------|-------------------------------------------|---------------|
+| ;help   |               | Shows help regarding added commands       | ;help         |
+| ;warn   | add del count | Warning system to aid in chat moderation. |               |
 
