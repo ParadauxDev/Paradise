@@ -15,7 +15,7 @@ function error(errtype, errmsg, msg) {
 }
 
 function saveWarnings() {
-    fs.writeFile("./data/infractions/warnings.json", JSON.stringify(infractions, null, 4), (err) => {
+    fs.writeFile("./data/infractions/warnings.json", JSON.stringify(warnings, null, 4), (err) => {
         if (err) {
             console.error(err);
             return;
@@ -41,8 +41,18 @@ function addWarning(userid, reason) {
         warnings["users"][userid] = [];
         warnings["users"][userid].push(newWarning);
     }
-    saveInfractions();
+    saveWarnings();
 }
+
+function showWarnings(userid) {
+    if (warnings["users"][userid] !== undefined) {
+        return warnings["users"][userid]
+    } else {
+        return false
+    }
+
+}
+
 
 exports.run = (client, message, args) => {
     // Adds a warning to a user
@@ -77,7 +87,17 @@ exports.run = (client, message, args) => {
     //
     else if (args[0] === "del") {
         message.reply("Please Contact **Paradaux#2864** Regarding the removal of warnings for now.")
-    } else if (args[0] === "show") {}
+    }
+
+    //
+    else if (args[0] === "show") {
+        let user = message.mentions.members.first().user
+        if (showWarnings(user.id) === false) {
+            message.reply("**" + user.username + "#" + user.discriminator + "** hasn't been warned, thankfully.")
+        } else {
+            message.channel.send(JSON.stringify(showWarnings(user.id)));
+        }
+    }
 
     //
     else if (args[0] === "count") {

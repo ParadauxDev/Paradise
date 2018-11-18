@@ -1,6 +1,10 @@
 #Paradise: Yet another discord.js bot
+Current version: prerelease2-181118
+
 Paradise is a utility, fun and moderation bot written for Discord using [discord.js](https://github.com/discordjs/discord.js)
-Open Source, not to be used for commercial activity.
+This is still heavily in development with a huge lack of features as we write a lot of the server-side for now. Bare with us. 
+Join a participating testing server; https://discord.gg/kh7wCgw We're looking for beta servers with significant server populations,
+contact Paradaux#2864 for more information.
 
 # Requirements
 
@@ -48,8 +52,8 @@ Here's a list of our current, active contributors:
 
 Commands are currently being worked on, but currently the focus is on the back-end handling for each command. (i.e database storage for our moderation system.)
 
-| Command | Argument(s)   | Notes                                     | Example Usage |
-|---------|---------------|-------------------------------------------|---------------|
-| ;help   |               | Shows help regarding added commands       | ;help         |
-| ;warn   | add del count | Warning system to aid in chat moderation. |               |
+| Command | Argument(s)        | Notes                                     | Example Usage |
+|---------|--------------------|-------------------------------------------|---------------|
+| ;help   |                    | Shows help regarding added commands       | ;help         |
+| ;warn   | add del count show | Warning system to aid in chat moderation. |               |
 
