@@ -1,1 +1,11 @@
-{}
+{
+    "users": {
+        "276423301650317314": {
+            "isMuted": true,
+            "reason": "Shit memes",
+            "issuer": "Paradaux#2864",
+            "time": "",
+            "log": []
+        }
+    }
+}

@@ -1,1 +1,23 @@
-{}
+{
+    "users": {
+        "userid": {
+            "isMuted": boolean,
+            "reason": "",
+            "issuer": "discord#1337",
+            "time": "",
+            "log": [{
+                "reason": "",
+                "issuer": "",
+                "time": ""
+            } {
+                "reason": "",
+                "issuer": "",
+                "time": ""
+            } {
+                "reason": "",
+                "issuer": "",
+                "time": ""
+            }]
+        }
+    }
+}

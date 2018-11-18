@@ -53,7 +53,6 @@ function showWarnings(userid) {
 
 }
 
-
 exports.run = (client, message, args) => {
     // Adds a warning to a user
     // Example Syntax: ;warn add @Paradaux Being a silly goose
