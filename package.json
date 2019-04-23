@@ -1,17 +1,18 @@
 {
-  "name": "vishnu",
-  "version": "1.0.0",
-  "description": "A bot made for the Discord server, Inspire only.",
+  "name": "Paradise",
+  "version": "0.5.0",
+  "description": "General Purpose Discord Bot.",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Rahul",
-  "license": "ISC",
+  "author": "Paradaux Development",
+  "license": "ALLRIGHTSRESERVED",
   "dependencies": {
     "discord.js": "^11.3.2",
     "enmap": "^3.0.4",
-    "lodash": "^4.17.10",
-    "moment": "^2.22.2"
+    "moment": "^2.22.2",
+    "mongodb": "^3.2.3",
+    "ms": "^2.1.1",
   }
 }
