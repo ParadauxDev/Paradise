@@ -13,7 +13,6 @@ In order to host this bot yourself you'll need the following node.js packages wh
 
  - [discord.js](https://github.com/discordjs/discord.js) - v11.3.2 (stable)
  -  [enmap](https://github.com/eslachance/enmap) - v3.0.4
- - [lodash](https://github.com/lodash/lodash) - v4.17.10
  - [moment](https://github.com/moment/moment/) - v2.22.2
  
  Developed using the following global packages
