@@ -1,25 +1,26 @@
 # Paradise: 
 ##### Yet another discord.js bot
-Current version: prerelease3-181118
+Current version: v0.5.6testing (development version.)
 
-Paradise is a utility, fun and moderation bot written for Discord using [discord.js](https://github.com/discordjs/discord.js)
+Paradise is a utility and moderation bot written for Discord using [discord.js](https://github.com/discordjs/discord.js)
 This is still heavily in development with a huge lack of features as we write a lot of the server-side for now. Bare with us. 
-Join a participating testing server; https://discord.gg/kh7wCgw We're looking for beta servers with significant server populations,
-contact Paradaux#2864 for more information.
+We're looking for beta servers with significant server populations, contact Paradaux#2864 for more information.
 
 # Requirements
 
 In order to host this bot yourself you'll need the following node.js packages which can be installed by simply running `npm install` once you've cloned the repository:
 
  - [discord.js](https://github.com/discordjs/discord.js) - v11.3.2 (stable)
- -  [enmap](https://github.com/eslachance/enmap) - v3.0.4
+ - [enmap](https://github.com/eslachance/enmap) - v3.0.4
  - [moment](https://github.com/moment/moment/) - v2.22.2
+ - [reaction-core](https://github.com/Mundayne/reaction-core) - v2.2.0
+ - [mongoose](https://mongoosejs.com/) - v5.5.3
  
  Developed using the following global packages
 - [nodemon](https://github.com/remy/nodemon) - v1.18.3
 - [forever](https://github.com/foreverjs/forever) - v0.15.3
 
-# Installtion / Setting it up
+# Installation / Setting it up
 
 Before you can begin using this bot you will need to register your bot with the discord api via the developers portal available [here](https://discordapp.com/developers/applications/me) 
 
@@ -52,9 +53,9 @@ Here's a list of our current, active contributors:
 
 Commands are currently being worked on, but currently the focus is on the back-end handling for each command. (i.e database storage for our moderation system.)
 
-| Command | Argument(s)        | Notes                                     | Example Usage         |
-|---------|--------------------|-------------------------------------------|-----------------------|
-| ;help   |                    | Shows help regarding added commands       | ;help                 |
-| ;warn   | add del count show | Warning system to aid in chat moderation. | ;warn add @Paradaux   |
-| ;mute   |                    | Placeholder command, For now.             | ;mute                 |
+| Command | Argument(s)          | Notes                                     | Example Usage         |
+|---------|----------------------|-------------------------------------------|-----------------------|
+| ;help   |                      | Shows help regarding added commands       | ;help                 |
+| ;warn   | add-remove-check     | Warning system to aid in chat moderation. | ;warn add @Paradaux   |
+| ;mute   | <usr> <time> <reasion| Placeholder command, For now.             | ;mute                 |
 
