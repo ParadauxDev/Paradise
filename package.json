@@ -2,6 +2,9 @@
   "name": "paradise",
   "version": "0.5.6",
   "description": "Discord Utility and Moderation bot",
+  "name": "Paradise",
+  "version": "0.5.0",
+  "description": "General Purpose Discord Bot.",
   "main": "main.js",
   "dependencies": {
     "chalk": "^2.4.2",
@@ -28,5 +31,15 @@
   "bugs": {
     "url": "https://github.com/ParadauxDevelopment/Paradise/issues"
   },
-  "homepage": "https://github.com/ParadauxDevelopment/Paradise#readme"
+  "homepage": "https://github.com/ParadauxDevelopment/Paradise#readme",
+  "author": "Paradaux Development",
+  "license": "ALLRIGHTSRESERVED",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "enmap": "^3.0.4",
+    "moment": "^2.22.2",
+    "mongodb": "^3.2.3",
+    "ms": "^2.1.1",
+  }
+
 }
